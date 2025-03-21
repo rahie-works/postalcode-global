@@ -1,20 +1,20 @@
-const { getLocation } = require("../src/index");
+const { getLocation } = require("../dist/index");
 
 test("Returns correct city and state for valid ZIP code", async () => {
-  const result = await getLocation("3200", "DK");
-  expect(result).toHaveProperty("city", "Helsinge");
-  expect(result).toHaveProperty("state", "Capital Region");
+    const result = await getLocation({ postalCode: "3200", country: "DK" });
+    expect(result).toHaveProperty("city", "Helsinge");
+    expect(result).toHaveProperty("state", "Capital Region");
 });
 
 test("Throws an error when postalCode or country is missing", async () => {
-    await expect(getLocation("10001")).rejects.toThrow("Both postalCode and country are required.");
-    await expect(getLocation(null, "US")).rejects.toThrow("Both postalCode and country are required.");
-    await expect(getLocation()).rejects.toThrow("Both postalCode and country are required.");
+    await expect(getLocation({ postalCode: "10001", country: null })).rejects.toThrow("Both postalCode and country are required.");
+    await expect(getLocation({ postalCode: null, country: "US" })).rejects.toThrow("Both postalCode and country are required.");
+    await expect(getLocation({})).rejects.toThrow("Both postalCode and country are required.");
 });
 
-test("Returns error for invalid ZIP code", async () => {
-    const result = await getLocation("00000", "US");
-    expect(result).toHaveProperty("city", undefined)
-    expect(result).toHaveProperty("state", undefined)
-    expect(result).toHaveProperty("error", "No postalcode match found for the country" )
-  });
+test("Returns undefined city and state for invalid ZIP code", async () => {
+    const result = await getLocation({ postalCode: "00000", country: "US" });
+    expect(result).toHaveProperty("city", undefined);
+    expect(result).toHaveProperty("state", undefined);
+    expect(result).toHaveProperty("error", "Failed to fetch postal code info. Please check postalcode or counytry code");
+});
