@@ -6,7 +6,7 @@ read more about [pgeocode](https://pypi.org/project/pgeocode/)
 
 ## Installation
 
-npm install postalcode-global
+```npm install postalcode-global```
 
 ## Supported countries
 The list of countries available in the GeoNames database, with the corresponding country codes, are given below,
