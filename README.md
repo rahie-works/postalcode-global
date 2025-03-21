@@ -24,5 +24,41 @@ const getCityAndState = async () => {
     .then((data) => return data)
     .catch((err) => return err);
 }
+```
+
+## Response
+
+```
+{
+  city: 'Helsinge',
+  country: 'DK',
+  postal_code: '3200',
+  state: 'Capital Region'
+}
+
+```
+
+## Error Response if postal code is identified
+```
+{
+  city: undefined,
+  country: 'DK',
+  postal_code: '3200',
+  state: undefined,
+  error: `No postal code match found for the country`
+}
+```
+
+## Error response if postal code or country code is invalid
+```
+{
+  city: undefined,
+  country: 'DK',
+  postal_code: '3200',
+  state: undefined,
+  error: `Failed to fetch postal code info. Please check postalcode or country code`
+}
+
+```
 ---
 
