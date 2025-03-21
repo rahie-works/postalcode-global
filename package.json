@@ -1,0 +1,39 @@
+{
+  "name": "postalcode-global",
+  "version": "1.0.0",
+  "description": "A package to fetch city and state using zip code worldwide",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "python-server": "python3 server.py"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rahie-works/zipcode-international"
+  },
+  "keywords": [
+    "zip code",
+    "location",
+    "city",
+    "state",
+    "postal code"
+  ],
+  "author": "Raheesh Muhamed",
+  "license": "0BSD",
+  "dependencies": {
+    "body-parser": "1.20.3",
+    "cors": "2.8.5",
+    "express": "4.21.2",
+    "python-shell": "5.0.0"
+  },
+  "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "jest": "^29.7.0",
+    "nodemon": "3.1.9"
+  }
+}
