@@ -1,7 +1,7 @@
 {
   "name": "postalcode-global",
-  "version": "1.3.5",
-  "description": "A package to fetch city and state using zip code worldwide",
+  "version": "1.3.6",
+  "description": "Fetches city and state details for a given postal code in the sugested country list using pgeocode.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -23,7 +23,11 @@
     "location",
     "city",
     "state",
-    "postal code"
+    "postal code",
+    "postalcode",
+    "global",
+    "international",
+    "zipcodes"
   ],
   "author": "Raheesh Muhamed",
   "license": "0BSD",
