@@ -38,12 +38,12 @@ const getCityAndState = async () => {
 
 ```
 
-## Error Response if postal code is identified
+## Error Response if postal code is not identified
 ```
 {
   city: undefined,
   country: 'DK',
-  postal_code: '3200',
+  postal_code: '320000000',
   state: undefined,
   error: `No postal code match found for the country`
 }
@@ -53,8 +53,8 @@ const getCityAndState = async () => {
 ```
 {
   city: undefined,
-  country: 'DK',
-  postal_code: '3200',
+  country: 'DQ',
+  postal_code: '32r00',
   state: undefined,
   error: `Failed to fetch postal code info. Please check postalcode or country code`
 }
