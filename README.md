@@ -17,9 +17,12 @@ See [Geonames Database](https://download.geonames.org/export/zip/) for more info
 
 ## Usage
 ```js
-const { getLocation } = require("postalcode-global");
+import {getLocation} from "postalcode-global";
 
-getLocation("10001").then(console.log).catch(console.error);
-
+const getCityAndState = async () => {
+    const {state, city } = await getLocation({postalCode: "3200", country: "DK"})
+    .then((data) => return data)
+    .catch((err) => return err);
+}
 ---
 
