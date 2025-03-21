@@ -1,9 +1,11 @@
 {
   "name": "postalcode-global",
-  "version": "1.0.1",
+  "version": "1.2.1",
   "description": "A package to fetch city and state using zip code worldwide",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
+    "build": "tsc",
     "test": "jest",
     "start": "node index.js",
     "dev": "nodemon index.js",
@@ -33,7 +35,9 @@
   },
   "devDependencies": {
     "@jest/globals": "^29.7.0",
+    "@types/node": "^22.13.10",
     "jest": "^29.7.0",
-    "nodemon": "3.1.9"
+    "nodemon": "3.1.9",
+    "typescript": "^5.8.2"
   }
 }

@@ -1,3 +1,4 @@
-example.js
+example.ts
 node_modules/
-/tests/
+tests/
+src/

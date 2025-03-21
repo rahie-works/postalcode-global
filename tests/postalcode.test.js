@@ -1,4 +1,4 @@
-const { getLocation } = require("../index");
+const { getLocation } = require("../src/index");
 
 test("Returns correct city and state for valid ZIP code", async () => {
   const result = await getLocation("3200", "DK");

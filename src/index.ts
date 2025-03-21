@@ -1,6 +1,22 @@
+import { ExecException } from "child_process";
+
 const { exec } = require("child_process");
 
-function getLocation(postalCode, country) {
+export interface LocationResponse {
+    city?: string;
+    state?: string;
+    postalCode: string; 
+    country: string;
+    error?: string;
+}
+
+export const getLocation = ({
+    postalCode, 
+    country
+}:{
+    postalCode: string;
+    country: string
+}):Promise<LocationResponse> => {
     return new Promise((resolve, reject) => {
         // Check if both arguments are provided
         if (!postalCode || !country) {
@@ -11,7 +27,7 @@ function getLocation(postalCode, country) {
 
         exec(
             `curl -s -X POST ${url} -H "Content-Type: application/json" -d '${data}'`,
-            (error, stdout, stderr) => {
+            (error: ExecException | null, stdout: string, stderr: string) => {
                 if (error) {
                     reject(`Error: ${error.message}`);
                     return;
@@ -21,12 +37,19 @@ function getLocation(postalCode, country) {
                     return;
                 }
                 try {
-                    resolve(JSON.parse(stdout));
+                    const response = JSON.parse(stdout)
+                    resolve({
+                        city: response.city || undefined,
+                        state: response.state || undefined,
+                        country,
+                        postalCode,
+                      });
                 } catch (err) {
                     resolve({ 
                         city: undefined, 
                         state: undefined, 
-                        country, postalCode, 
+                        country,
+                        postalCode, 
                         error: "No postalcode match found for the country" 
                     });
                 }
@@ -34,5 +57,3 @@ function getLocation(postalCode, country) {
         );
     });
 }
-
-module.exports = { getLocation };
