@@ -41,7 +41,7 @@ export const getLocation = async ({
             state: undefined,
             country,
             postalCode,
-            error: `Failed to fetch postal code info. Please check postalcode or counytry code`
+            error: `Failed to fetch postal code info. Please check postalcode or country code`
         }
     }
 }
