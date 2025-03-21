@@ -1,6 +1,6 @@
 {
   "name": "postalcode-global",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A package to fetch city and state using zip code worldwide",
   "main": "index.js",
   "scripts": {

@@ -1,6 +1,6 @@
 # postalcode-global
 
-A package to fetch city and state using a ZIP code worldwide. This package uses the powerful python library pgeocode.
+A package to fetch city and state using a ZIP code worldwide. This package uses the python library pgeocode.
 
 read more about [pgeocode](https://pypi.org/project/pgeocode/)
 
