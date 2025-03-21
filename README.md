@@ -1,4 +1,4 @@
-# zipcode-international
+# postalcode-global
 
 A package to fetch city and state using a ZIP code worldwide. This package uses the powerful python library pgeocode.
 
@@ -6,7 +6,7 @@ read more about [pgeocode](https://pypi.org/project/pgeocode/)
 
 ## Installation
 
-npm install zipcode-international
+npm install postalcode-global
 
 ## Supported countries
 The list of countries available in the GeoNames database, with the corresponding country codes, are given below,
@@ -17,7 +17,7 @@ See [Geonames Database](https://download.geonames.org/export/zip/) for more info
 
 ## Usage
 ```js
-const { getLocation } = require("zipinfo-npm");
+const { getLocation } = require("postalcode-global");
 
 getLocation("10001").then(console.log).catch(console.error);
 
