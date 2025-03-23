@@ -8,6 +8,12 @@ read more about [pgeocode](https://pypi.org/project/pgeocode/)
 
 ```npm install postalcode-global```
 
+## Utilities
+
+1. getLocation ==> Promise that returns the state and city when a postal code and country code are provided
+2. validatePostalCode ==> checks if the provided postal code matches the country's postal code pattern and returns a boolean
+3. postalCodeExistForCountry ==> checks if the country has a postal code rule and returns a boolean
+
 ## Supported countries
 The list of countries available in the GeoNames database, with the corresponding country codes, are given below,
 
