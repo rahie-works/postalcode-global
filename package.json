@@ -1,6 +1,6 @@
 {
   "name": "postalcode-global",
-  "version": "2.3.6",
+  "version": "2.0.1",
   "description": "Fetches city and state details for a given postal code in the sugested country list using pgeocode.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
