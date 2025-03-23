@@ -1,3 +1,5 @@
+import { POSTALCODE_REGEX } from "./constants/validationRegex";
+
 export interface LocationResponse {
     city?: string;
     state?: string;
@@ -44,4 +46,24 @@ export const getLocation = async ({
             error: `Failed to fetch postal code info. Please check postalcode or country code`
         }
     }
+}
+
+export const validatePostalCode = ({
+    countryCode,
+    postalCode
+}:{
+    countryCode: string;
+    postalCode: string
+}): boolean => {
+    const regexPattern = POSTALCODE_REGEX[countryCode as keyof typeof POSTALCODE_REGEX];
+    if (!regexPattern) {
+        console.error(`No postal code validation found for country code: ${countryCode}`);
+        return false;
+    }
+    return new RegExp(regexPattern).test(postalCode);
+}
+
+export const postalCodeExistForCountry = ({countryCode}:{countryCode: string}) => {
+    const regexPattern = POSTALCODE_REGEX[countryCode as keyof typeof POSTALCODE_REGEX];
+    return !!regexPattern;
 }
